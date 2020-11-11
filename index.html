@@ -5,9 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajax Example</title>
     <script src ="app.js"></script>
+    <link rel="stylesheet" href="styles.css">
 <body>
-    <h2>Avengers Character Search</h2>
-    <button type="button" id= "searchbtn" class="btn" >Search</button>
+    <h1>Avengers Character Search</h1>
+    <form action= "superheroes.php" method = "GET">
+        <label for ="name">Search by full name or alias</label><br><br> 
+            <div class ="input"> 
+            <button type="button" id= "searchbtn" class="btn" >Search</button>
+            <input type="text" id="name" name="name"> <br><br>
+        </div>
+    </form>
+        <h2>RESULT</h2>
+        <hr>
+        <div id = result> </div>
+        
+    </div>
     
 </body>
 </html>

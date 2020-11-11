@@ -3,9 +3,9 @@ window.onload=function(){
     
     btn.addEventListener("click", (e) => {
             e.preventDefault();
-
+            var searchQ = document.getElementById("name").value;
             var req = new XMLHttpRequest();
-            var url = "superheroes.php";
+            var url = "superheroes.php?name=" + searchQ;
 
             req.onreadystatechange = getlist;
             req.open("GET", url);
@@ -16,9 +16,10 @@ window.onload=function(){
         if(req.readyState === XMLHttpRequest.DONE){
             if(req.status === 200){
                 var response = req.responseText;
-                alert(response);
+                var result = document.getElementById("result");
+                result.innerHTML = response;
             }else{
-                alert('there was a problem');
+                alert('There was a problem');
             }
         }
     }
